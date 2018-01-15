@@ -1,23 +1,30 @@
 package com.company;
 
 public class Phone {
-    String model;
-    long number;
-    double weight;
+    private String model;
+    private long number;
+    private double weight;
+    private static int count =0;
 
     Phone() {
     }
 
+
+
     public Phone(String str, long l, double doub) {
         this(str, l);
         this.weight = doub;
+        count++;
     }
 
     public Phone(String str, long l) {
         model = str;
         number = l;
         weight = 100000;
+        count++;
     }
+
+    static int getCountInstance(){return count;}
 
     public void recieveCall(long n) {
         System.out.println("Calling " + n);
@@ -32,6 +39,33 @@ public class Phone {
         for (String i : array) {
             System.out.print(" " + i + "\n");
         }
+    }
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public long getNumber() {
+        return number;
+    }
+
+    public void setNumber(long number) {
+        this.number = number;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+    protected void finalize() {
+        System.out.println("In finalize");
+        count--;
     }
 //    public Phone(String model) {
 //    this.model = model;
