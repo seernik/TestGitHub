@@ -16,6 +16,13 @@ public class Book implements Printable {
    }
 
     @Override
+    public String toString() {
+        return "Book{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
+    @Override
     public void print() {
         System.out.println("Printing "+ name);
 
@@ -25,5 +32,12 @@ public class Book implements Printable {
         Book book1 = new Book("Google");
         book1.print();
 
+    }
+    public static void printBooks(Printable[] printables) {
+        for (Printable mg : printables) {
+            if (mg instanceof Book) {
+                System.out.println(mg);
+            }
+        }
     }
 }

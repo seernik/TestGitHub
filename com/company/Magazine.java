@@ -1,6 +1,6 @@
 package com.company;
 
-public class Magazine implements Printable{
+public class Magazine implements Printable {
     String name, color;
     public String getName() {
         return name;
@@ -24,6 +24,26 @@ public class Magazine implements Printable{
         this.color=color;
     }
 
+    @Override
+    public String toString() {
+        return "Magazine{" +
+                "name='" + name + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
+
+    public void print() {
+        System.out.println("Printing "+ name);
+
+    }
+    public static void printMags(Printable[] printables) {
+        for (Printable mg : printables) {
+            if (mg instanceof Magazine) {
+                System.out.println(mg);
+//                mg.print();
+            }
+        }
+    }
 
 
 }
