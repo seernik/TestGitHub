@@ -30,6 +30,7 @@ public class EquString {
         System.out.println((str5));
         str5=str1.toUpperCase();
         System.out.println(str5);
+        subs(str1);
             }
     public static void beg(String str1){
         System.out.print(str1.startsWith("I Like") +"\t");
@@ -40,9 +41,9 @@ public class EquString {
     public static void last(String str){
         System.out.println(str.charAt((str.length()-1)));
     }
-    public static subs(String str){
+    public static void subs(String str){
         String i =  "Java" ;
-        str1.indexOf("Java")
+        System.out.println(str.indexOf("Java"));
 
     }
 }
