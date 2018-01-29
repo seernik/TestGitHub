@@ -7,9 +7,8 @@ import java.util.ResourceBundle;
 public class ResBund {
     public static void main(String[] args) throws UnsupportedEncodingException {
         printInfo("", "");
-
-        printInfo("en", "US");
         printInfo("uk", "UA");
+        printInfo("enд", "US");
     }
 
     private static void printInfo(String language, String country)
@@ -18,8 +17,9 @@ public class ResBund {
         ResourceBundle rb = ResourceBundle.getBundle("text", current);
         for (String key : rb.keySet()) {
             String value = rb.getString(key);
-            value = new String(value.getBytes("ISO-8859-1"), "UTF-8");
+            value = new String(value.getBytes("ISO-8859-5"),"ISO-8859-5");
             System.out.println(value);
         }
         System.out.println();
-    }}
+    }
+}
