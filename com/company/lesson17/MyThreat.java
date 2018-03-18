@@ -5,6 +5,7 @@ public class MyThreat {
         NewThreat newThreat1 = new NewThreat();
         NewThreat newThreat2 = new NewThreat();
         NewThreat newThreat3 = new NewThreat();
+        newThreat2.setPriority(8);
         newThreat1.start();
         newThreat2.start();
         newThreat3.start();
